@@ -15,15 +15,15 @@ st.set_page_config(
 st.markdown("""<style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
 :root {
-    --bg: #f8fafc;         /* Slate 50 - Latar belakang utama */
-    --surface: #ffffff;    /* Putih murni untuk kartu */
-    --surface2: #f1f5f9;   /* Slate 100 - Latar belakang sekunder/input */
-    --border: #cbd5e1;     /* Slate 300 - Garis batas */
-    --accent: #0284c7;     /* Light Blue 600 */
-    --accent2: #6366f1;    /* Indigo 500 */
-    --accent3: #059669;    /* Emerald 600 */
-    --text: #0f172a;       /* Slate 900 - Teks utama gelap */
-    --text-muted: #475569; /* Slate 600 - Teks pendukung */
+    --bg: #f8fafc;         
+    --surface: #ffffff;    
+    --surface2: #f1f5f9;   
+    --border: #cbd5e1;     
+    --accent: #0284c7;     
+    --accent2: #6366f1;    
+    --accent3: #059669;    
+    --text: #0f172a;       
+    --text-muted: #475569; 
     --font-body: 'DM Sans', sans-serif; 
     --font-mono: 'Space Mono', monospace;
     --font-display: 'Playfair Display', serif; 
@@ -35,7 +35,6 @@ html, body, [class*="css"] { font-family: var(--font-body) !important; color: va
 #MainMenu, footer, header { visibility: hidden; }
 .stDeployButton { display: none; }
 
-/* ─── Komponen Portal & Tim ─── */
 .landing-hero { text-align: center; padding: 2rem 2rem 1rem; }
 .hero-badge {
     display: inline-block; font-family: var(--font-mono); font-size: 0.75rem;
@@ -54,14 +53,13 @@ html, body, [class*="css"] { font-family: var(--font-body) !important; color: va
 }
 .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
-/* Kartu Tim Pengembang di Depan */
 .team-banner {
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
     padding: 1.5rem; text-align: center; margin: 1.5rem auto 3rem; max-width: 900px;
     box-shadow: var(--shadow); border-top: 4px solid var(--accent);
 }
 .team-banner h4 { font-size: 1rem; color: var(--accent); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-.team-banner p { font-size: 0.95rem; color: var(--text); font-weight: 500; line-height: 1.8; margin: 0; }
+.team-banner p { font-size: 0.95rem; color: var(--text); font-weight: 500; margin: 0; }
 
 .portal-card {
     background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
@@ -70,14 +68,9 @@ html, body, [class*="css"] { font-family: var(--font-body) !important; color: va
 .portal-card:hover { border-color: var(--accent); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); transform: translateY(-5px); }
 .portal-card h3 { color: var(--text); font-weight: 700; margin-top: 10px; }
 
-/* ─── Komponen Spesifik ─── */
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
 .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); }
 .page-title { font-family: var(--font-display) !important; font-size: 2rem !important; color: var(--text) !important; margin-bottom: 0.3rem !important; }
-.page-sub { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
-.app-header { font-size: 32px; font-weight: 800; color: var(--accent); margin-bottom: 5px; }
 
-/* ─── General Streamlit Override ─── */
 .stButton > button {
     background: var(--surface) !important; border: 1px solid var(--border) !important;
     color: var(--text) !important; border-radius: 8px !important;
@@ -88,145 +81,49 @@ html, body, [class*="css"] { font-family: var(--font-body) !important; color: va
 .stButton > button[kind="primary"]:hover { opacity: 0.9 !important; color: white !important; }
 
 .stTextInput > div > div > input, .stSelectbox > div > div { background: var(--surface) !important; border: 1px solid var(--border) !important; color: var(--text) !important; }
-.streamlit-expanderHeader { background: var(--surface2) !important; border: 1px solid var(--border) !important; border-radius: 8px !important; color: var(--text) !important; font-weight: 600 !important; }
-.streamlit-expanderContent { background: var(--surface) !important; border: 1px solid var(--border) !important; border-top: none !important; }
-hr { border-color: var(--border) !important; }
-code, pre { background: var(--surface2) !important; border: 1px solid var(--border) !important; color: var(--accent2) !important; border-radius: 6px !important; }
-.stAlert { background: var(--surface) !important; border: 1px solid var(--border) !important; color: var(--text) !important; }
-
 .result-box { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-top: 1.5rem; }
 .result-item { background: var(--surface); border-radius: 8px; padding: 1rem; margin-bottom: 0.8rem; border-left: 4px solid var(--accent3); box-shadow: var(--shadow); }
-.result-golongan { font-family: var(--font-mono); font-weight: 700; color: var(--accent3); }
-.tag { display: inline-block; background: #e0f2fe; border: 1px solid #bae6fd; color: #0369a1; font-size: 0.78rem; padding: 0.25rem 0.7rem; border-radius: 999px; margin: 0.2rem; }
+.result-golongan { font-family: var(--font-mono); font-weight: 700; color: var(--accent3); font-size: 1.1rem; }
 </style>""", unsafe_allow_html=True)
 
-# ─── 3. DATABASE & FUNGSI ORGANIK (DIKEMBALIKAN UTUH) ───────────────────────
+# ─── 3. DATABASE ORGANIK ────────────────────────────────────────────────────
 SENYAWA_DB = [
-    {"Nama": "Etanol", "Rumus": "C₂H₅OH", "Golongan": "Alkohol", "Uji Positif": "Esterifikasi, Iodoform", "CAS": "64-17-5"},
-    {"Nama": "Metanol", "Rumus": "CH₃OH", "Golongan": "Alkohol", "Uji Positif": "Esterifikasi", "CAS": "67-56-1"},
-    {"Nama": "Aseton", "Rumus": "CH₃COCH₃", "Golongan": "Keton", "Uji Positif": "2,4-DNPH", "CAS": "67-64-1"},
-    {"Nama": "Formaldehid", "Rumus": "HCHO", "Golongan": "Aldehid", "Uji Positif": "Tollens, Fehling", "CAS": "50-00-0"},
-    {"Nama": "Asetaldehid", "Rumus": "CH₃CHO", "Golongan": "Aldehid", "Uji Positif": "Tollens, Fehling, Iodoform", "CAS": "75-07-0"},
-    {"Nama": "Asam Asetat", "Rumus": "CH₃COOH", "Golongan": "Asam Karboksilat", "Uji Positif": "Lakmus, Esterifikasi", "CAS": "64-19-7"},
-    {"Nama": "Asam Format", "Rumus": "HCOOH", "Golongan": "Asam Karboksilat", "Uji Positif": "Tollens, Lakmus", "CAS": "64-18-6"},
-    {"Nama": "Etil Asetat", "Rumus": "CH₃COOC₂H₅", "Golongan": "Ester", "Uji Positif": "Hidrolisis", "CAS": "141-78-6"},
-    {"Nama": "Fenol", "Rumus": "C₆H₅OH", "Golongan": "Fenol", "Uji Positif": "FeCl₃ (ungu)", "CAS": "108-95-2"},
-    {"Nama": "Etilena", "Rumus": "CH₂=CH₂", "Golongan": "Alkena", "Uji Positif": "Bromin, Baeyer", "CAS": "74-85-1"},
-    {"Nama": "Benzena", "Rumus": "C₆H₆", "Golongan": "Aromatik", "Uji Positif": "Nitrasi", "CAS": "71-43-2"},
-    {"Nama": "Glukosa", "Rumus": "C₆H₁₂O₆", "Golongan": "Karbohidrat", "Uji Positif": "Tollens, Fehling, Benedict", "CAS": "50-99-7"},
-    {"Nama": "Sukrosa", "Rumus": "C₁₂H₂₂O₁₁", "Golongan": "Karbohidrat", "Uji Positif": "Molisch", "CAS": "57-50-1"},
-    {"Nama": "Albumin", "Rumus": "Protein", "Golongan": "Protein", "Uji Positif": "Biuret, Ninhidrin", "CAS": "—"},
-    {"Nama": "Anilin", "Rumus": "C₆H₅NH₂", "Golongan": "Amina", "Uji Positif": "Reaksi diazonium", "CAS": "62-53-3"},
+    {"Nama Golongan": "Alkohol Primer/Sekunder", "Uji Spesifik": "Iodoform (jika metil karbinol), Uji Lucas"},
+    {"Nama Golongan": "Alkohol Tersier", "Uji Spesifik": "Uji Lucas (langsung keruh)"},
+    {"Nama Golongan": "Aldehida", "Uji Spesifik": "2,4-DNPH, Tollens, Fehling"},
+    {"Nama Golongan": "Keton", "Uji Spesifik": "2,4-DNPH (Tanpa reaksi di Tollens/Fehling)"},
+    {"Nama Golongan": "Fenol", "Uji Spesifik": "FeCl₃ (Warna ungu/hijau)"},
+    {"Nama Golongan": "Karbohidrat / Gula Pereduksi", "Uji Spesifik": "Molisch, Fehling, Tollens"},
+    {"Nama Golongan": "Protein / Peptida", "Uji Spesifik": "Biuret (Warna ungu)"},
 ]
-
-MATERI_UJI = {
-    "🟡 Uji Bromin": {
-        "tujuan": "Mendeteksi ikatan rangkap (C=C) pada senyawa tak jenuh.",
-        "pereaksi": "Larutan Br₂ dalam CCl₄ atau air.",
-        "prinsip": "Bromin bereaksi adisi dengan ikatan rangkap. Warna coklat-merah bromin akan hilang (dekolorisasi) bila bereaksi dengan alkena atau alkuna.",
-        "reaksi": "Alkena + Br₂ → Dibromoalkana (tak berwarna)",
-        "positif": "Warna bromin (coklat-merah) hilang menjadi bening.",
-        "negatif": "Warna bromin tetap / tidak berubah.",
-        "contoh_positif": ["Etilena", "Propena", "Butadiena"],
-    },
-    "🟣 Uji Baeyer": {
-        "tujuan": "Mendeteksi ketidakjenuhan (ikatan rangkap) dan gugus yang mudah dioksidasi.",
-        "pereaksi": "KMnO₄ encer (0,1%) dalam suasana netral/basa.",
-        "prinsip": "KMnO₄ mengoksidasi ikatan rangkap atau gugus aldehid. Mn⁷⁺ (ungu) tereduksi menjadi MnO₂ (coklat).",
-        "reaksi": "3 R-CH=CH-R' + 2 KMnO₄ + 4H₂O → 3 R-CHOH-CHOH-R' + 2 MnO₂ + 2 KOH",
-        "positif": "Warna ungu hilang, terbentuk endapan coklat MnO₂.",
-        "negatif": "Warna ungu tetap.",
-        "contoh_positif": ["Alkena", "Alkuna", "Aldehid", "Alkohol primer"],
-    },
-    "⚪ Uji Tollens": {
-        "tujuan": "Identifikasi spesifik gugus aldehid (−CHO).",
-        "pereaksi": "Pereaksi Tollens: [Ag(NH₃)₂]⁺ (larutan perak-amonia).",
-        "prinsip": "Aldehid mereduksi ion perak (Ag⁺) menjadi logam perak (Ag⁰) yang mengendap di dinding tabung membentuk cermin perak.",
-        "reaksi": "R-CHO + 2[Ag(NH₃)₂]⁺ + 2OH⁻ → R-COO⁻ + 2Ag↓ + 4NH₃ + H₂O",
-        "positif": "Terbentuk cermin perak (silver mirror) di dinding tabung.",
-        "negatif": "Tidak ada perubahan / larutan tetap bening.",
-        "contoh_positif": ["Formaldehid", "Asetaldehid", "Glukosa", "Asam Format"],
-    },
-    "🔵 Uji Fehling": {
-        "tujuan": "Membedakan aldehid alifatik dari keton.",
-        "pereaksi": "Fehling A (CuSO₄) + Fehling B (NaOH + Na-Kalium tartrat).",
-        "prinsip": "Cu²⁺ (biru) dalam kompleks tartrat direduksi oleh aldehid menjadi Cu⁺ (merah bata Cu₂O).",
-        "reaksi": "R-CHO + 2Cu²⁺ + 5OH⁻ → R-COO⁻ + Cu₂O↓ + 3H₂O",
-        "positif": "Endapan merah bata (Cu₂O).",
-        "negatif": "Larutan tetap biru.",
-        "contoh_positif": ["Formaldehid", "Glukosa", "Maltosa"],
-    },
-    "🟤 Uji Iodoform": {
-        "tujuan": "Mendeteksi gugus metil keton (CH₃CO−) atau alkohol sekunder dengan gugus metil (CH₃CHOH−).",
-        "pereaksi": "I₂ dalam NaOH (KI/I₂ + NaOH).",
-        "prinsip": "Metil keton bereaksi dengan I₂/NaOH membentuk iodoform (CHI₃) yang berwarna kuning dengan bau khas.",
-        "reaksi": "CH₃COR + 3I₂ + 3NaOH → CHI₃↓ + RCOONa + 3NaI + 3H₂O",
-        "positif": "Endapan kuning CHI₃ berbau antiseptik.",
-        "negatif": "Tidak ada endapan kuning.",
-        "contoh_positif": ["Aseton", "Etanol", "Asetaldehid", "2-Propanol"],
-    },
-    "🟢 Uji FeCl₃": {
-        "tujuan": "Mendeteksi senyawa fenol (gugus −OH aromatik).",
-        "pereaksi": "FeCl₃ 1% dalam air.",
-        "prinsip": "Ion Fe³⁺ membentuk kompleks berwarna dengan gugus fenolat.",
-        "reaksi": "3 ArOH + FeCl₃ → [Fe(OAr)₃] + 3 HCl",
-        "positif": "Terbentuk warna ungu, biru, atau hijau tergantung senyawa.",
-        "negatif": "Tidak ada perubahan warna.",
-        "contoh_positif": ["Fenol", "Resorsinol", "Katekin"],
-    },
-    "🔴 Uji Biuret": {
-        "tujuan": "Mendeteksi protein (ikatan peptida −CO−NH−).",
-        "pereaksi": "NaOH + CuSO₄ encer.",
-        "prinsip": "Ion Cu²⁺ membentuk kompleks dengan dua atau lebih ikatan peptida menghasilkan warna ungu-violet.",
-        "reaksi": "Cu²⁺ + ikatan peptida → Kompleks ungu",
-        "positif": "Warna ungu-violet muncul.",
-        "negatif": "Larutan tetap biru muda.",
-        "contoh_positif": ["Albumin", "Kasein", "Gelatin"],
-    },
-    "🟠 Uji Molisch": {
-        "tujuan": "Uji umum keberadaan karbohidrat.",
-        "pereaksi": "α-naftol dalam etanol + H₂SO₄ pekat.",
-        "prinsip": "H₂SO₄ mendehidrasi karbohidrat menjadi furfural yang bereaksi dengan α-naftol membentuk cincin berwarna.",
-        "reaksi": "Karbohidrat →(H₂SO₄) Furfural + α-naftol → Kompleks ungu-merah",
-        "positif": "Cincin ungu-merah di batas dua lapisan cairan.",
-        "negatif": "Tidak ada cincin berwarna.",
-        "contoh_positif": ["Glukosa", "Sukrosa", "Amilum", "Selulosa"],
-    },
-}
 
 def identifikasi_senyawa(jawaban: dict) -> list:
     kandidat = []
-    larut, bromin, baeyer = jawaban.get("larut"), jawaban.get("bromin"), jawaban.get("baeyer")
-    tollens, fehling, iodoform = jawaban.get("tollens"), jawaban.get("fehling"), jawaban.get("iodoform")
-    fecl3, biuret, molisch, asam = jawaban.get("fecl3"), jawaban.get("biuret"), jawaban.get("molisch"), jawaban.get("asam")
-
-    if tollens == "Ya" and fehling == "Ya":
-        if molisch == "Ya": kandidat.append(("Karbohidrat (Gula Pereduksi)", "Tollens ✅ + Fehling ✅ + Molisch ✅ → Aldosa seperti Glukosa"))
-        else: kandidat.append(("Aldehid", "Tollens ✅ + Fehling ✅ → Aldehid alifatik (Formaldehid, Asetaldehid)"))
-    elif tollens == "Ya" and fehling == "Tidak":
-        kandidat.append(("Aldehid Aromatik / Asam Format", "Tollens ✅ + Fehling ❌ → Kemungkinan benzaldehid atau asam format"))
-    if iodoform == "Ya" and tollens == "Tidak":
-        kandidat.append(("Keton (Metil Keton)", "Iodoform ✅ + Tollens ❌ → Metil keton seperti Aseton"))
-    elif iodoform == "Ya" and tollens == "Ya":
-        kandidat.append(("Asetaldehid", "Iodoform ✅ + Tollens ✅ → Kemungkinan besar Asetaldehid (CH₃CHO)"))
-    if fecl3 == "Ya":
-        kandidat.append(("Fenol", "FeCl₃ ✅ → Gugus fenol terdeteksi (warna ungu/biru/hijau)"))
-    if bromin == "Ya" and baeyer == "Ya" and tollens == "Tidak" and fecl3 == "Tidak":
-        kandidat.append(("Alkena / Alkuna", "Bromin ✅ + Baeyer ✅ + Tollens ❌ → Senyawa tak jenuh"))
-    if iodoform == "Ya" and tollens == "Tidak" and fecl3 == "Tidak" and bromin == "Tidak":
-        kandidat.append(("Alkohol (Etanol / 2-Propanol)", "Iodoform ✅ + Tollens ❌ + Bromin ❌ → Alkohol dengan gugus CH₃CHOH−"))
-    if asam == "Ya" and tollens == "Tidak" and fehling == "Tidak":
-        kandidat.append(("Asam Karboksilat", "Sifat asam ✅ + Tollens ❌ → Kemungkinan asam karboksilat"))
-    if biuret == "Ya":
-        kandidat.append(("Protein", "Biuret ✅ → Ikatan peptida terdeteksi. Kemungkinan protein"))
-    if molisch == "Ya" and tollens == "Tidak" and fehling == "Tidak":
-        kandidat.append(("Karbohidrat (Non-Pereduksi)", "Molisch ✅ + Tollens ❌ → Karbohidrat non-pereduksi (Sukrosa, Amilum)"))
-    if not kandidat:
-        kandidat.append(("Tidak Teridentifikasi", "Kombinasi hasil uji tidak cocok dengan pola yang ada. Coba periksa kembali hasil uji Anda."))
+    if jawaban.get("dnph") == "Ya":
+        if jawaban.get("tollens") == "Ya" or jawaban.get("fehling") == "Ya":
+            kandidat.append(("Aldehida", "2,4-DNPH ✅ + Tollens/Fehling ✅"))
+        else:
+            kandidat.append(("Keton", "2,4-DNPH ✅ + Tollens/Fehling ❌"))
+            if jawaban.get("iodoform") == "Ya":
+                kandidat.append(("Metil Keton", "Iodoform ✅"))
+    if jawaban.get("lucas") != "Tidak ada perubahan (Bening)":
+        if jawaban.get("lucas") == "Keruh seketika":
+            kandidat.append(("Alkohol Tersier", "Uji Lucas ✅ (Seketika bereaksi)"))
+        elif jawaban.get("lucas") == "Keruh dalam 5-10 menit (Dipanaskan)":
+            kandidat.append(("Alkohol Sekunder", "Uji Lucas ✅ (Reaksi lambat)"))
+            if jawaban.get("iodoform") == "Ya":
+                kandidat.append(("Alkohol Sekunder (Metil Karbinol)", "Iodoform ✅"))
+    if jawaban.get("fecl3") == "Ya": kandidat.append(("Fenol / Golongan Fenolik", "FeCl₃ ✅"))
+    if jawaban.get("biuret") == "Ya": kandidat.append(("Protein / Ikatan Peptida", "Biuret ✅"))
+    if jawaban.get("molisch") == "Ya": 
+        kandidat.append(("Karbohidrat", "Molisch ✅"))
+        if jawaban.get("fehling") == "Ya":
+            kandidat.append(("Karbohidrat (Gula Pereduksi)", "Fehling ✅"))
+    if not kandidat: 
+        kandidat.append(("Zat Tidak Dikenali", "Kombinasi hasil uji tidak spesifik."))
     return kandidat
 
-
-# ─── 4. DATABASE & FUNGSI METATESIS ─────────────────────────────────────────
+# ─── 4. DATABASE & FUNGSI METATESIS KOMPREHENSIF ────────────────────────────
 kation_db = {
     'H': (1, False), 'Li': (1, False), 'Na': (1, False), 'K': (1, False), 'Rb': (1, False), 'Cs': (1, False),
     'Be': (2, False), 'Mg': (2, False), 'Ca': (2, False), 'Sr': (2, False), 'Ba': (2, False),
@@ -242,7 +139,7 @@ anion_db = {
     'MnO4': (-1, True), 'HCO3': (-1, True), 'HSO4': (-1, True), 'H2PO4': (-1, True),
     'O': (-2, False), 'S': (-2, False),
     'SO4': (-2, True), 'SO3': (-2, True), 'CO3': (-2, True), 'CrO4': (-2, True), 'Cr2O7': (-2, True), 
-    'C2O4': (-2, True), 'S2O3': (-2, True), 'HPO4': (-2, True),
+    'C2O4': (-2, True), 'S2O3': (-2, True), 'HPO4': (-2, True), 'SiO3': (-2, True),
     'PO4': (-3, True), 'PO3': (-3, True), 'AsO4': (-3, True), 'N': (-3, False), 'P': (-3, False)
 }
 
@@ -271,13 +168,27 @@ def gabung_ion(kation, anion):
     return "H2O" if senyawa_baru == "HOH" else senyawa_baru
 
 def apakah_mengendap(kation, anion):
-    if kation == 'H' and anion in ['OH', 'O']: return False
-    if kation in ['Na', 'K', 'NH4', 'Li', 'Rb', 'Cs']: return False
-    if anion in ['NO3', 'CH3COO']: return False
-    if anion in ['Cl', 'Br', 'I']: return True if kation in ['Ag', 'Pb', 'Hg'] else False
-    if anion == 'SO4': return True if kation in ['Ba', 'Ca', 'Sr', 'Pb'] else False
-    if anion == 'OH': return False if kation in ['Ca', 'Sr', 'Ba'] else True
-    if anion in ['CO3', 'PO4', 'CrO4', 'S', 'O']: return True
+    kation_larut = ['Li', 'Na', 'K', 'Rb', 'Cs', 'NH4', 'H']
+    anion_larut = ['NO3', 'CH3COO', 'ClO3', 'ClO4', 'MnO4', 'NO2', 'HCO3', 'HSO4']
+    if kation in kation_larut: return False
+    if anion in anion_larut: return False
+    if anion in ['Cl', 'Br', 'I', 'SCN']:
+        if kation in ['Ag', 'Pb', 'Hg', 'Cu']: return True
+        return False
+    if anion == 'F':
+        if kation in ['Mg', 'Ca', 'Sr', 'Ba', 'Pb']: return True
+        return False
+    if anion == 'SO4':
+        if kation in ['Ba', 'Sr', 'Ca', 'Pb', 'Ag', 'Hg']: return True
+        return False
+    if anion in ['OH', 'O']:
+        if kation in ['Ba', 'Sr', 'Ca']: return False
+        return True
+    if anion == 'S':
+        if kation in ['Mg', 'Ca', 'Sr', 'Ba']: return False
+        return True
+    anion_endapan = ['CO3', 'PO4', 'PO3', 'CrO4', 'Cr2O7', 'C2O4', 'SO3', 'AsO4', 'SiO3', 'CN']
+    if anion in anion_endapan: return True
     return False
 
 def fmt_muatan(nilai, tanda):
@@ -303,7 +214,10 @@ if st.session_state.app_mode == "portal":
     
     <div class="team-banner">
         <h4>👨‍🔬 Tim Pengembang Aplikasi (D3 Analisis Kimia - AKA Bogor)</h4>
-        <p>✨ Agung Nugraha (NIM: 2560557) &nbsp; | &nbsp; ✨ Alifia Citra Nabila &nbsp; | &nbsp; ✨ Haifa Maulafida<br>✨ Nabila Putri Khorinnisa &nbsp; | &nbsp; ✨ Rania Ayudia</p>
+        <p style="line-height: 2;">
+            ✨ Agung Nugraha (2560557) &nbsp; | &nbsp; ✨ Alifia Citra Nabila (2560562) &nbsp; | &nbsp; ✨ Haifa Maulifida Falihah (2560638)<br>
+            ✨ Nabila Putri Khorinnisa (2560695) &nbsp; | &nbsp; ✨ Rania Ayudia Amirru (2560746)
+        </p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -321,106 +235,122 @@ if st.session_state.app_mode == "portal":
         st.markdown('</div>', unsafe_allow_html=True)
 
 # ════════════════════════════════════════════════════════════════════════════════
-#  B. MODUL: IDENTIFIKASI SENYAWA ORGANIK (KINI SUDAH LENGKAP KEMBALI)
+#  B. MODUL: IDENTIFIKASI SENYAWA ORGANIK
 # ════════════════════════════════════════════════════════════════════════════════
 elif st.session_state.app_mode == "organik":
-    
     if st.session_state.halaman_org == "landing":
         st.button("🏠 Kembali ke Portal Utama", on_click=go_portal)
-        st.markdown("""
-        <div class="landing-hero" style="padding-top:1rem;">
-            <div class="hero-badge">⚗️ Kimia Organik Kualitatif</div>
-            <h1 class="hero-title">Sistem Identifikasi<br><span class="hero-accent">Senyawa Organik</span></h1>
-            <p class="hero-desc">Platform edukasi interaktif untuk mengidentifikasi golongan senyawa organik berdasarkan hasil pengujian laboratorium.</p>
-        </div>
-        """, unsafe_allow_html=True)
-
+        st.markdown('<div class="landing-hero" style="padding-top:1rem;"><div class="hero-badge">⚗️ Kimia Organik</div><h1 class="hero-title">Sistem Identifikasi<br><span class="hero-accent">Senyawa Organik</span></h1></div>', unsafe_allow_html=True)
         col1, col2, col3 = st.columns(3)
         with col1:
             if st.button("🔬 Mulai Identifikasi", use_container_width=True, type="primary"): nav_org("identifikasi")
         with col2:
-            if st.button("📚 Materi Uji Organik", use_container_width=True): nav_org("materi")
-        with col3:
             if st.button("🗄️ Database Senyawa", use_container_width=True): nav_org("database")
-
-        st.markdown("""
-        <div class="feature-grid">
-            <div class="feature-card"><div class="feature-icon">🔬</div><h3>Identifikasi Senyawa</h3><p>Jawab pertanyaan berdasarkan hasil praktikum dan dapatkan identifikasi golongan.</p></div>
-            <div class="feature-card"><div class="feature-icon">📚</div><h3>Materi Lengkap</h3><p>Pelajari teori, prinsip, pereaksi, dan interpretasi 8 jenis uji kualitatif organik.</p></div>
-            <div class="feature-card"><div class="feature-icon">🗄️</div><h3>Database Senyawa</h3><p>Akses database 15+ senyawa organik dengan rumus, golongan, dan uji positifnya.</p></div>
-        </div>
-        """, unsafe_allow_html=True)
+        with col3:
+            if st.button("📚 Dasar Teori", use_container_width=True): nav_org("teori")
 
     elif st.session_state.halaman_org == "identifikasi":
         if st.button("← Kembali ke Menu Organik"): nav_org("landing")
-        st.markdown('<h2 class="page-title">🔬 Identifikasi Senyawa Organik</h2>', unsafe_allow_html=True)
-        st.markdown('<p class="page-sub">Jawab pertanyaan berikut berdasarkan hasil pengujian di laboratorium Anda.</p>', unsafe_allow_html=True)
-
-        st.markdown('<div class="feature-card" style="padding:2rem;">', unsafe_allow_html=True)
-        jawaban = {}
-        st.markdown("#### 💧 Kelarutan")
-        jawaban["larut"] = st.radio("Apakah sampel larut dalam air?", ["Ya", "Tidak", "Sebagian"], horizontal=True)
-        st.divider()
-        st.markdown("#### 🧪 Uji Ikatan Rangkap")
-        col1, col2 = st.columns(2)
-        with col1: jawaban["bromin"] = st.radio("Warna bromin hilang (Uji Bromin)?", ["Ya", "Tidak"], horizontal=True)
-        with col2: jawaban["baeyer"] = st.radio("Warna ungu hilang (Uji Baeyer)?", ["Ya", "Tidak"], horizontal=True)
-        st.divider()
-        st.markdown("#### ⚗️ Uji Oksidasi-Reduksi")
-        col1, col2 = st.columns(2)
-        with col1: jawaban["tollens"] = st.radio("Terbentuk cermin perak (Uji Tollens)?", ["Ya", "Tidak"], horizontal=True)
-        with col2: jawaban["fehling"] = st.radio("Endapan merah bata (Uji Fehling)?", ["Ya", "Tidak"], horizontal=True)
-        st.divider()
-        st.markdown("#### 🔍 Uji Spesifik Gugus Fungsi")
-        col1, col2, col3 = st.columns(3)
-        with col1: jawaban["iodoform"] = st.radio("Endapan kuning (Uji Iodoform)?", ["Ya", "Tidak"], horizontal=True)
-        with col2: jawaban["fecl3"] = st.radio("Warna ungu/biru (Uji FeCl₃)?", ["Ya", "Tidak"], horizontal=True)
-        with col3: jawaban["asam"] = st.radio("Mengubah lakmus merah (asam)?", ["Ya", "Tidak"], horizontal=True)
-        st.divider()
-        st.markdown("#### 🧬 Uji Biomolekul")
-        col1, col2 = st.columns(2)
-        with col1: jawaban["biuret"] = st.radio("Warna ungu-violet (Uji Biuret)?", ["Ya", "Tidak"], horizontal=True)
-        with col2: jawaban["molisch"] = st.radio("Cincin ungu-merah (Uji Molisch)?", ["Ya", "Tidak"], horizontal=True)
+        st.markdown('<h2 class="page-title">🔬 Form Identifikasi Laboratorium</h2>', unsafe_allow_html=True)
+        st.markdown("Pilih hasil pengamatan dari reagen uji yang ditambahkan ke dalam sampel uji Anda.")
+        
+        st.markdown('<div class="feature-card">', unsafe_allow_html=True)
+        col_a, col_b = st.columns(2)
+        
+        with col_a:
+            st.markdown("**Uji Gugus Karbonil & Alkohol**")
+            jawaban = {
+                "dnph": st.radio("Terbentuk endapan kuning/merah (2,4-DNPH)?", ["Tidak", "Ya"], horizontal=True),
+                "tollens": st.radio("Terbentuk cermin perak (Uji Tollens)?", ["Tidak", "Ya"], horizontal=True),
+                "fehling": st.radio("Terbentuk endapan merah bata (Uji Fehling)?", ["Tidak", "Ya"], horizontal=True),
+                "iodoform": st.radio("Terbentuk endapan kuning (Uji Iodoform)?", ["Tidak", "Ya"], horizontal=True),
+                "lucas": st.radio("Hasil Uji Lucas (HCl pekat + ZnCl₂):", ["Tidak ada perubahan (Bening)", "Keruh dalam 5-10 menit (Dipanaskan)", "Keruh seketika"]),
+            }
+            
+        with col_b:
+            st.markdown("**Uji Spesifik Lainnya**")
+            jawaban.update({
+                "fecl3": st.radio("Terjadi perubahan warna ungu/hijau pekat (Uji FeCl₃)?", ["Tidak", "Ya"], horizontal=True),
+                "biuret": st.radio("Terbentuk kompleks warna ungu (Uji Biuret)?", ["Tidak", "Ya"], horizontal=True),
+                "molisch": st.radio("Terbentuk cincin ungu (Uji Molisch)?", ["Tidak", "Ya"], horizontal=True),
+            })
         st.markdown('</div>', unsafe_allow_html=True)
-
-        if st.button("🔎 Identifikasi Sekarang!", type="primary", use_container_width=True):
+        
+        if st.button("🔎 Eksekusi Identifikasi!", type="primary"):
             hasil = identifikasi_senyawa(jawaban)
-            st.markdown('<div class="result-box"><h3>📊 Hasil Identifikasi</h3>', unsafe_allow_html=True)
-            for golongan, alasan in hasil:
-                st.markdown(f'<div class="result-item"><div class="result-golongan">✅ {golongan}</div><div class="result-alasan">{alasan}</div></div>', unsafe_allow_html=True)
+            st.markdown('<div class="result-box">', unsafe_allow_html=True)
+            st.markdown("### 📋 Hasil Analisis Sistem")
+            if hasil[0][0] == "Zat Tidak Dikenali":
+                st.warning("⚠️ " + hasil[0][1] + " Coba periksa kembali parameter hasil pengamatan laboratorium Anda.")
+            else:
+                st.success("✅ Karakteristik sampel berhasil dicocokkan dengan algoritma sistem.")
+                for idx, (golongan, indikator) in enumerate(hasil):
+                    st.markdown(f"""
+                    <div class="result-item">
+                        <span class="result-golongan">Kandidat {idx+1} : {golongan}</span><br>
+                        <span style="font-size:0.95rem; color:var(--text-muted);"><b>Parameter Positif:</b> {indikator}</span>
+                    </div>
+                    """, unsafe_allow_html=True)
             st.markdown('</div>', unsafe_allow_html=True)
-            if len(hasil) > 1: st.info("💡 **Catatan:** Beberapa golongan terdeteksi. Lakukan uji tambahan untuk memastikan.")
-
-    elif st.session_state.halaman_org == "materi":
-        if st.button("← Kembali ke Menu Organik"): nav_org("landing")
-        st.markdown('<h2 class="page-title">📚 Materi Uji Kualitatif</h2>', unsafe_allow_html=True)
-        for nama_uji, data in MATERI_UJI.items():
-            with st.expander(f"{nama_uji}", expanded=False):
-                c1, c2 = st.columns(2)
-                with c1:
-                    st.markdown(f"**🎯 Tujuan:**\n{data['tujuan']}\n\n**🧪 Pereaksi:**\n{data['pereaksi']}\n\n**⚙️ Prinsip:**\n{data['prinsip']}")
-                with c2:
-                    st.markdown("**🔬 Reaksi:**")
-                    st.code(data["reaksi"], language=None)
-                    st.markdown(f"**✅ Positif:** {data['positif']}\n\n**❌ Negatif:** {data['negatif']}")
-                st.markdown("**🔬 Contoh Senyawa Positif:**")
-                cols = st.columns(len(data["contoh_positif"]))
-                for i, senyawa in enumerate(data["contoh_positif"]): cols[i].markdown(f'<span class="tag">{senyawa}</span>', unsafe_allow_html=True)
 
     elif st.session_state.halaman_org == "database":
         if st.button("← Kembali ke Menu Organik"): nav_org("landing")
-        st.markdown('<h2 class="page-title">🗄️ Database Senyawa</h2>', unsafe_allow_html=True)
-        c1, c2 = st.columns([2, 1])
-        with c1: cari = st.text_input("🔍 Cari senyawa...")
-        with c2: filter_golongan = st.selectbox("Filter", ["Semua"] + sorted(list(set(s["Golongan"] for s in SENYAWA_DB))))
-        df = pd.DataFrame(SENYAWA_DB)
-        if cari: df = df[df["Nama"].str.contains(cari, case=False) | df["Golongan"].str.contains(cari, case=False)]
-        if filter_golongan != "Semua": df = df[df["Golongan"] == filter_golongan]
-        st.dataframe(df, use_container_width=True, hide_index=True)
+        st.markdown('<h2 class="page-title">🗄️ Database Senyawa Organik</h2>', unsafe_allow_html=True)
+        st.dataframe(pd.DataFrame(SENYAWA_DB), use_container_width=True, hide_index=True)
 
+    elif st.session_state.halaman_org == "teori":
+        if st.button("← Kembali ke Menu Organik"): nav_org("landing")
+        st.markdown('<h2 class="page-title">📚 Dasar Teori Analisis Organik</h2>', unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div class="feature-card">
+        <h3>Analisis Kualitatif Senyawa Organik</h3>
+        <p>Analisis kualitatif senyawa organik merupakan serangkaian prosedur pengujian laboratorium yang bertujuan untuk mengidentifikasi keberadaan gugus fungsi spesifik dalam suatu sampel tak dikenal. Berdasarkan algoritma pada sistem Chemisfun, identifikasi difokuskan pada penggolongan aldehida, keton, alkohol, fenol, karbohidrat, dan protein melalui pengamatan visual terhadap perubahan warna, pembentukan endapan, atau kekeruhan.</p>
+        
+        <h4>1. Identifikasi Gugus Karbonil (Aldehida dan Keton)</h4>
+        Senyawa aldehida dan keton memiliki kesamaan struktural berupa ikatan rangkap karbon-oksigen (gugus karbonil). Untuk membedakan dan mengidentifikasi keduanya, serangkaian uji spesifik dilakukan:
+        <ul>
+            <li><b>Uji 2,4-Dinitrofenilhidrazin (2,4-DNPH):</b> Reagen ini berfungsi sebagai uji penapisan awal untuk semua gugus karbonil. Reaksi kondensasi antara sampel dengan reagen Brady (2,4-DNPH) yang menghasilkan endapan berwarna kuning hingga jingga kemerahan mengonfirmasi keberadaan aldehida atau keton.</li>
+            <li><b>Uji Tollens (Cermin Perak):</b> Digunakan untuk membedakan aldehida dari keton. Aldehida dapat dioksidasi oleh ion perak amoniakal $[Ag(NH_3)_2]^+$, sehingga mereduksi ion $Ag^+$ menjadi logam perak murni yang menempel pada dinding tabung reaksi membentuk "cermin perak". Keton tidak memberikan hasil positif pada uji ini.</li>
+            <li><b>Uji Fehling:</b> Memiliki prinsip kerja yang serupa dengan uji Tollens. Aldehida mereduksi ion tembaga(II) kompleks menjadi tembaga(I) oksida ($Cu_2O$), yang menghasilkan endapan berwarna merah bata.</li>
+            <li><b>Uji Iodoform:</b> Uji spesifik ini digunakan untuk mendeteksi keberadaan gugus metil keton (senyawa karbonil yang memiliki gugus metil yang terikat langsung pada karbon karbonil). Reaksi positif ditandai dengan terbentuknya endapan kuning iodoform ($CHI_3$).</li>
+        </ul>
+
+        <h4>2. Identifikasi Golongan Alkohol</h4>
+        Alkohol diklasifikasikan menjadi primer, sekunder, dan tersier berdasarkan letak terikatnya gugus hidroksil (-OH).
+        <ul>
+            <li><b>Uji Lucas:</b> Reagen Lucas terdiri dari asam klorida (HCl) pekat dan seng klorida ($ZnCl_2$) anhidrat. Uji ini didasarkan pada kecepatan reaksi substitusi nukleofilik ($S_N1$) pembentukan alkil klorida yang tidak larut. 
+                <ul>
+                    <li><b>Alkohol tersier</b> bereaksi sangat cepat, menghasilkan kekeruhan atau pemisahan fase seketika.</li>
+                    <li><b>Alkohol sekunder</b> bereaksi lebih lambat, umumnya membutuhkan waktu 5-10 menit dan pemanasan ringan untuk membentuk kekeruhan.</li>
+                    <li><b>Alkohol primer</b> tidak bereaksi (tetap bening) pada suhu ruang.</li>
+                </ul>
+            </li>
+            <li><b>Uji Iodoform untuk Alkohol:</b> Selain untuk metil keton, uji iodoform juga akan bernilai positif pada alkohol sekunder yang memiliki struktur metil karbinol (struktur di mana gugus -OH terikat pada karbon yang juga mengikat gugus metil).</li>
+        </ul>
+
+        <h4>3. Identifikasi Golongan Fenol</h4>
+        Fenol merupakan senyawa organik di mana gugus hidroksil terikat langsung pada cincin aromatik.
+        <ul>
+            <li><b>Uji Besi(III) Klorida ($FeCl_3$):</b> Penambahan larutan $FeCl_3$ ke dalam sampel yang mengandung gugus fenolik bebas akan menghasilkan pembentukan kompleks besi-fenol yang sangat berwarna (umumnya ungu, hijau, atau biru pekat, bergantung pada struktur spesifik fenolnya).</li>
+        </ul>
+
+        <h4>4. Identifikasi Karbohidrat</h4>
+        Karbohidrat merupakan polihidroksi aldehida atau keton. Pengujian pada kelompok ini mencakup uji umum dan uji spesifik gula pereduksi:
+        <ul>
+            <li><b>Uji Molisch:</b> Merupakan uji umum untuk semua jenis karbohidrat. Reaksi dehidrasi karbohidrat oleh asam sulfat pekat menghasilkan senyawa furfural atau derivatnya, yang kemudian berkondensasi dengan $\\alpha$-naftol membentuk cincin berwarna ungu di bidang batas larutan.</li>
+            <li><b>Uji Gula Pereduksi:</b> Karbohidrat yang memiliki gugus aldehida bebas (atau keton yang dapat berisomerisasi) akan memberikan hasil positif (endapan merah bata) pada Uji Fehling maupun Uji Tollens, membedakannya dari karbohidrat non-pereduksi seperti sukrosa atau polisakarida kompleks.</li>
+        </ul>
+
+        <h4>5. Identifikasi Protein dan Peptida</h4>
+        <ul>
+            <li><b>Uji Biuret:</b> Reagen Biuret yang mengandung ion $Cu^{2+}$ dalam suasana basa digunakan untuk mengidentifikasi keberadaan ikatan peptida (ikatan amida) pada makromolekul protein. Reaksi pembentukan kompleks koordinasi antara ion tembaga dengan pasangan elektron bebas dari nitrogen amida akan menghasilkan perubahan warna larutan menjadi ungu violet.</li>
+        </ul>
+        </div>
+        """, unsafe_allow_html=True)
 
 # ════════════════════════════════════════════════════════════════════════════════
-#  C. MODUL: REAKSI METATESIS (DENGAN 3 REAKTAN)
+#  C. MODUL: REAKSI METATESIS
 # ════════════════════════════════════════════════════════════════════════════════
 elif st.session_state.app_mode == "metatesis":
     st.button("🏠 Kembali ke Portal Utama", on_click=go_portal)
@@ -442,7 +372,6 @@ elif st.session_state.app_mode == "metatesis":
         elif "H2O" in input_raw:
             st.warning("⚠️ Reaktan H₂O memicu pelarutan fisik, bukan metatesis murni.")
         else:
-            # Urai semua reaktan yang diinput
             parsed_reactants = [urai_senyawa(r) for r in input_raw]
             
             if not all(k and a for k, a in parsed_reactants):
@@ -451,18 +380,15 @@ elif st.session_state.app_mode == "metatesis":
                 kations = [p[0] for p in parsed_reactants]
                 anions = [p[1] for p in parsed_reactants]
                 
-                # Buat semua kemungkinan produk silang
                 produk_kemungkinan = set()
                 for i, k in enumerate(kations):
                     for j, a in enumerate(anions):
-                        if i != j:  # Jangan gabungkan kation dan anion dari reaktan yang sama
+                        if i != j:  
                             produk_kemungkinan.add(gabung_ion(k, a))
                 
                 try:
-                    # Penyetaraan menggunakan ChemPy
                     r_setara, p_setara = balance_stoichiometry(set(input_raw), produk_kemungkinan)
                     
-                    # Format string reaksi
                     def format_dict(senyawa_dict):
                         hasil = []
                         for seny, koef in senyawa_dict.items():
@@ -475,7 +401,6 @@ elif st.session_state.app_mode == "metatesis":
                     kiri = format_dict(r_setara)
                     kanan = format_dict(p_setara)
                     
-                    # Cek Driving Force pada produk yang BENAR-BENAR terbentuk
                     alasan = []
                     for p in p_setara.keys():
                         if p == "H2O": 
@@ -496,11 +421,9 @@ elif st.session_state.app_mode == "metatesis":
                     
                     st.divider()
                     
-                    # --- Lembar Kerja Analisis ---
                     st.markdown("### 🔍 Lembar Kerja Analisis Ion")
                     cols_urai = st.columns(len(input_raw))
                     
-                    # Tampilkan Penguraian (Dinamis 2 atau 3 kolom)
                     for idx, (k, a) in enumerate(parsed_reactants):
                         c_k, c_a = fmt_muatan(kation_db[k][0], '+'), fmt_muatan(abs(anion_db[a][0]), '-')
                         with cols_urai[idx]:
@@ -509,7 +432,6 @@ elif st.session_state.app_mode == "metatesis":
                             
                     st.info("💡 **Aturan Silang Muatan:** Kation (positif) dari satu reaktan bertukar pasangan dengan Anion (negatif) dari reaktan lain membentuk senyawa baru: $A^{x+} + B^{y-} \\rightarrow A_yB_x$")
                     
-                    # Tampilkan Pembentukan Produk yang berhasil disetarakan
                     cols_prod = st.columns(len(p_setara))
                     for idx, p in enumerate(p_setara.keys()):
                         k_p, a_p = urai_senyawa(p)
